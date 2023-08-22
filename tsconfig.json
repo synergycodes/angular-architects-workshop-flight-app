@@ -1,4 +1,3 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -28,12 +27,10 @@
       "@demo/ticketing/feature-next-flights": [
         "src/app/domains/ticketing/feature-next-flights/index.ts"
       ],
-
       "@demo/checkin/data": ["src/app/domains/checkin/data/index.ts"],
       "@demo/checkin/feature-manage": [
         "src/app/domains/checkin/feature-manage/index.ts"
       ],
-
       "@demo/shared/ui-common": ["src/app/domains/shared/ui-common/index.ts"],
       "@demo/shared/util-auth": ["src/app/domains/shared/util-auth/index.ts"],
       "@demo/shared/util-common": [
@@ -52,7 +49,8 @@
       "@demo/luggage/data": ["src/app/domains/luggage/data/index.ts"],
       "@demo/luggage/feature-checkin": [
         "src/app/domains/luggage/feature-checkin/index.ts"
-      ]
+      ],
+      "auth": ["projects/auth/src/public-api.ts"]
     }
   },
   "angularCompilerOptions": {
