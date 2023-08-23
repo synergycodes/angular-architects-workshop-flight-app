@@ -66,3 +66,15 @@ export class FlightLookupFacade {
     this.input$.next(filter);
   }
 }
+
+/*
+  1. input -> lookup -> combineLatest (emits always because startWith on online$) -> if (online) -> loading indicator + load method -> flightService.find
+  2. producers encapsulation, no observables overwrite
+  3. turns subject into observable
+  4. keep one producer for all observers + replay last value after new subscription (BehaviorSubject like behavior, change cold observable in the hot one)
+  5. how many items should be re-emitted, refCount for avoiding memory leaks
+  6. emits set of values whenever any of them change, but only after each has emitted at least once
+  7. to unsubscribe from previous stream and subscribe to new one (load)
+  8. flightService.find is the only method that can fail here and error would be pushed in the error stream
+  9. switchMap ending with an error would break whole flights stream
+ */

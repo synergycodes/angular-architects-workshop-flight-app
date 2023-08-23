@@ -45,3 +45,8 @@ export class FlightLookupComponent implements OnInit, OnDestroy {
     this.close$.next();
   }
 }
+
+/*
+  1. delays emission by given time and emits only if no further changes occurs within that time
+  2. takeUntilDestroyed + pattern with takeUntil and ngOnDestroy
+ */
