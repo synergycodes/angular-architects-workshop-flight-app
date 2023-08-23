@@ -4,13 +4,15 @@ import { FlightBookingComponent } from './flight-booking.component';
 import { FlightEditComponent } from './flight-edit/flight-edit.component';
 import { FlightSearchComponent } from './flight-search/flight-search.component';
 import { PassengerSearchComponent } from './passenger-search/passenger-search.component';
-import { FlightService } from '@demo/ticketing/data';
+import { FlightService, ticketingFeature } from '@demo/ticketing/data';
+import { provideState } from '@ngrx/store';
+import { checkAuth } from '@demo/shared/util-auth';
 
 export const FLIGHT_BOOKING_ROUTES: Routes = [
   {
     path: '',
     component: FlightBookingComponent,
-    providers: [],
+    providers: [provideState(ticketingFeature)],
     children: [
       {
         path: '',
@@ -32,6 +34,7 @@ export const FLIGHT_BOOKING_ROUTES: Routes = [
       {
         path: 'passenger-search',
         component: PassengerSearchComponent,
+        canActivate: [checkAuth],
       },
     ],
   },
