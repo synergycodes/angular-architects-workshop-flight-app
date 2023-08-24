@@ -48,6 +48,7 @@ export const APP_ROUTES: Routes = [
           import('@demo/ticketing/feature-booking').then(
             (m) => m.FLIGHT_BOOKING_ROUTES
           ),
+        data: { preload: true },
       },
       {
         path: 'next-flights',
