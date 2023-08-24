@@ -26,6 +26,8 @@ export interface TicketingState {
   stats: unknown;
   from: unknown;
   to: unknown;
+
+  editedFlight: Flight | null;
 }
 
 export const initTicketingState: TicketingState = {
@@ -54,6 +56,7 @@ export const initTicketingState: TicketingState = {
   from: '',
   to: '',
   stats: {},
+  editedFlight: null,
 };
 
 export const ticketingFeature = createFeature({

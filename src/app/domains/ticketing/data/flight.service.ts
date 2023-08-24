@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { firstValueFrom, Observable } from 'rxjs';
+import { firstValueFrom, Observable, of } from 'rxjs';
 import { Flight } from './flight';
 import { ConfigService } from '@demo/shared/util-config';
 
@@ -37,5 +37,10 @@ export class FlightService {
     const params = { id };
 
     return this.http.get<Flight>(url, { headers, params });
+  }
+
+  updateFlight(flightData: Flight) {
+    console.log('todo implementation', flightData);
+    return of();
   }
 }
